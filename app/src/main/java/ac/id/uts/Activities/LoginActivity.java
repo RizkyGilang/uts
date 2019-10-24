@@ -1,13 +1,13 @@
 package ac.id.uts.Activities;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import ac.id.uts.R;
 
@@ -29,7 +29,7 @@ public class LoginActivity extends AppCompatActivity {
                 String pass_ =  password.getText().toString();
                 if (user_name.equals("admin")&&pass_.equals("admin")){
                     Toast.makeText(getApplicationContext(),"Username dan Password benar Anda berhasil Login",Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(LoginActivity.this,MainActivity.class);
+                    Intent intent = new Intent(LoginActivity.this,CobaActivity.class);
                     startActivity(intent);
                 }
                 else {
