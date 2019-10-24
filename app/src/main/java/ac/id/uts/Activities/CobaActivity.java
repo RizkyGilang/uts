@@ -27,6 +27,7 @@ public class CobaActivity extends AppCompatActivity {
 
     // variable fields EditText dan Button
     private Button btSubmit;
+    private Button btproses;
     private EditText etnama;
     private EditText etharga;
     private EditText etuang;
@@ -43,7 +44,19 @@ public class CobaActivity extends AppCompatActivity {
         etuang = (EditText) findViewById(R.id.et_uang);
         etkembalian = (EditText) findViewById(R.id.et_kemablian);
         btSubmit = (Button) findViewById(R.id.bt_submit);
+        btproses = (Button) findViewById(R.id.bt_hitung);
 
+        btproses.setOnClickListener(new View.OnClickListener() {
+                                        @Override
+                                        public void onClick(View view) {
+                                            String harga = etharga.getText().toString().trim();
+                                            String uangbayar = etuang.getText().toString().trim();
+                                            double jb = Double.parseDouble(uangbayar);
+                                            double h = Double.parseDouble(harga);
+                                            double total = (jb - h);
+                                            etkembalian.setText("Kembalian : " + total);
+                                        }
+                                    });
         // mengambil referensi ke Firebase Database
         database = FirebaseDatabase.getInstance().getReference();
 
@@ -86,7 +99,7 @@ public class CobaActivity extends AppCompatActivity {
                 etnama.setText("");
                 etharga.setText("");
                 etuang.setText("");
-                etuang.setText("");
+                etkembalian.setText("");
                 Snackbar.make(findViewById(R.id.bt_submit), "Data berhasil ditambahkan", Snackbar.LENGTH_LONG).show();
             }
         });

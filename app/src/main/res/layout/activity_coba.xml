@@ -5,7 +5,9 @@
     android:layout_gravity="center_horizontal"
     android:gravity="center_horizontal"
     android:orientation="vertical"
-    android:padding="10dp">
+    android:padding="10dp"
+    android:background="@drawable/bg2">
+
 
     <TextView
         android:layout_width="wrap_content"
@@ -24,21 +26,26 @@
         android:id="@+id/et_harga"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Merk Barang"
+        android:hint="Harga Barang"
         android:inputType="text" />
 
     <EditText
         android:id="@+id/et_uang"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Harga Barang"
+        android:hint="Uang Customers"
         android:inputType="number" />
+    <Button
+        android:id="@+id/bt_hitung"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Hitung" />
 
     <EditText
         android:id="@+id/et_kemablian"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Harga Barang"
+        android:hint="Kembalian"
         android:inputType="number" />
     <Button
         android:id="@+id/bt_submit"
